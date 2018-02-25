@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5bdd30f-880b-4b28-958a-7717b93eb2bb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/sample/Task1.py" afterPath="$PROJECT_DIR$/sample/task1.py" />
-      <change beforePath="$PROJECT_DIR$/task_resources/Iris Data.txt" afterPath="$PROJECT_DIR$/task_resources/iris_data.txt" />
+      <change beforePath="$PROJECT_DIR$/sample/task1.py" afterPath="$PROJECT_DIR$/sample/task1.py" />
       <change beforePath="$PROJECT_DIR$/tests/test_task1.py" afterPath="$PROJECT_DIR$/tests/test_task1.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,15 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/NeuralNetworksTask1$Unittests_for_test_task1_TestNeuralTask1_testLoadingIrisDataSetFromTextFile.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1519585497129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/NeuralNetworksTask1$Unittests_for_test_task1_TestNeuralTask1_testLoadingIrisDataSetFromTextFile.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1519587598613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_task1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_task1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_task1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="290">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -32,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="task1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sample/task1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -61,8 +59,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tests/test_core.py" />
-        <option value="$PROJECT_DIR$/tests/test_task1.py" />
         <option value="$PROJECT_DIR$/sample/task1.py" />
+        <option value="$PROJECT_DIR$/tests/test_task1.py" />
       </list>
     </option>
   </component>
@@ -181,34 +179,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 01m 04s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 25m 31s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 01m 19s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 25m 50s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 01m 43s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 27m 14s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 01m 52s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 30m 33s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 02m 11s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 32m 51s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 03m 34s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 35m 46s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 03m 57s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 35m 57s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 04m 05s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 36m 12s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 04m 34s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 36m 45s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 04m 57s.xml">
+    <history-entry file="Unittests_in_tests - 2018.02.25 at 21h 39m 58s.xml">
       <configuration name="Unittests in tests" configurationId="tests" />
     </history-entry>
   </component>
@@ -257,21 +255,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_task1.py">
+    <entry file="file://$PROJECT_DIR$/sample/task1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/task1.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_task1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="290">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
