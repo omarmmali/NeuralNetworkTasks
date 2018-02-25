@@ -30,9 +30,26 @@ class TestNeuralTask1(unittest.TestCase):
         node = Task1NeuralNetwork.createNode\
         (numberOfInputs, numberOfClasses, learningRate, bias)
 
-        self.assertEqual(numberOfInputs, len(node.inputs))
+        self.assertEqual(numberOfInputs, len(node.weights))
         self.assertEqual(learningRate, node.learningRate)
         self.assertEqual(numberOfClasses, node.numberOfClasses)
+        self.assertEqual(numberOfInputs, node.numberOfInputs)
+        self.assertEqual(0, node.bias)
+
+    def testCreatingANodeWithSpecifiedNumberOfInputsWithBias(self):
+        numberOfInputs = 2
+        bias = 1
+        learningRate = 0.1
+        numberOfClasses = 2
+
+        node = Task1NeuralNetwork.createNode\
+        (numberOfInputs, numberOfClasses, learningRate, bias)
+
+        self.assertEqual(numberOfInputs, len(node.weights) - 1)
+        self.assertEqual(learningRate, node.learningRate)
+        self.assertEqual(numberOfClasses, node.numberOfClasses)
+        self.assertEqual(numberOfInputs + 1, node.numberOfInputs)
+        self.assertEqual(1, node.bias)
 
     def testSettingEpochs(self):
         epochs = 2
@@ -40,6 +57,16 @@ class TestNeuralTask1(unittest.TestCase):
         Task1NeuralNetwork.setEpochs(epochs)
 
         self.assertEqual(epochs, Task1NeuralNetwork.epochs)
+
+    def testSettingInputsInNode(self):
+        features = [1, 2, 3, 4]
+
+        dummyNode = Task1NeuralNetwork.createNode(4, 2, 0.1, 1)
+
+        dummyNode.setInputValues(features)
+
+        for i in range(dummyNode.numberOfInputs):
+            self.assertEqual(features[i], dummyNode.inputs[i])
 
     def testSignumReturnsNegativeOneForNegativeValues(self):
         netValue = -0.56
@@ -54,3 +81,29 @@ class TestNeuralTask1(unittest.TestCase):
         output = Task1NeuralNetwork.signumValue(netValue)
 
         self.assertEqual(1, output)
+
+    def testNetValueWithBias(self):
+        dummyNode = Task1NeuralNetwork.createNode(2, 2, 0.1, 1)
+
+        inputs = [1, 2]
+        dummyNode.setInputValues(inputs)
+        dummyWeights = [1, 1, 1]
+        dummyNode.weights = dummyWeights
+
+        output = dummyNode.calculateNetValue()
+
+        self.assertEqual(4, output)
+
+    def testNetValueWithoutBias(self):
+        dummyNode = Task1NeuralNetwork.createNode(2, 2, 0.1, 0)
+
+        inputs = [1, 2]
+        dummyNode.setInputValues(inputs)
+        dummyWeights = [1, 1]
+        dummyNode.weights = dummyWeights
+
+        output = dummyNode.calculateNetValue()
+
+        self.assertEqual(3, output)
+
+

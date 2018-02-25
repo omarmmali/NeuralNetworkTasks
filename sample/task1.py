@@ -4,11 +4,27 @@ class Node(object):
 
     @classmethod
     def createNodeWithRandomWeights(cls, numberOfInputs, numberOfClasses, learningRate, bias):
-        cls.inputs = np.random.rand(numberOfInputs + bias, 1)
+        cls.weights = np.random.rand(numberOfInputs + bias, 1)
+        cls.numberOfInputs = numberOfInputs + bias
         cls.numberOfClasses = numberOfClasses
         cls.learningRate = learningRate
+        cls.bias = bias
 
         return cls
+
+    @classmethod
+    def setInputValues(cls, features):
+        if cls.bias:
+            features.append(1)
+
+        cls.inputs = np.array(features)
+
+    @classmethod
+    def calculateNetValue(cls):
+        netValue = 0
+        for i in range(cls.numberOfInputs):
+            netValue += cls.inputs[i] * cls.weights[i]
+        return netValue
 
 
 class Task1NeuralNetwork(object):
@@ -52,6 +68,7 @@ class Task1NeuralNetwork(object):
     @classmethod
     def setEpochs(cls, epochs):
         cls.epochs = epochs
+
 
     @classmethod
     def signumValue(cls, netValue):
