@@ -20,26 +20,25 @@ class Node(object):
         cls.inputs = np.array(features)
 
     @classmethod
-    def calculateNetValue(cls, inputs):
+    def calculateNetValue(cls, inputs,f1_index ,f2_index):
         netValue = 0
-
-        for i in range(cls.numberOfInputs):
-            netValue += inputs[i] * cls.weights[i]
+        netValue += float(inputs[f1_index]) * cls.weights[0]
+        netValue += float(inputs[f2_index]) * cls.weights[1]
 
         if cls.bias:
-            netValue += cls.weights[-1]
+            netValue += cls.weights[2]
 
         return netValue
 
     @classmethod
-    def updateWeights(cls, error, inputs):
-        changeInWeights = cls.learningRate * error
+    def updateWeights(cls, error, inputs,f1_index,f2_index):
+        changeInWeights = float(cls.learningRate) * float(error)
+        cls.weights[0] += float(changeInWeights) * float(inputs[f1_index])
+        cls.weights[1] += float(changeInWeights) * float(inputs[f2_index])
 
-        for i in range(len(inputs)):
-            cls.weights[i] += changeInWeights * inputs[i]
 
         if cls.bias:
-            cls.weights[-1] += changeInWeights
+            cls.weights[2] += changeInWeights
 
 class Task1NeuralNetwork(object):
     @classmethod
@@ -90,11 +89,11 @@ class Task1NeuralNetwork(object):
             return -1
 
     @classmethod
-    def fit(cls, features, classes, bias, learningRate):
+    def fit(cls, classes, bias, learningRate, epochs,f1_index,f2_index):
         dataSet = cls.getIrisDataFromTextFile()
         features, lables = cls.splitDatasetToFeaturesAndLables(dataSet)
-
-        cls.curNode = Node.createNodeWithRandomWeights(len(features), learningRate, bias)
+        cls.setEpochs(epochs)
+        cls.curNode = Node.createNodeWithRandomWeights(2, learningRate, bias)
 
         firstClassDataSet, secondClassDataSet = cls.getClassesDataSets(classes, features, lables)
 
@@ -102,9 +101,9 @@ class Task1NeuralNetwork(object):
 
         for trainingIteration in range(cls.epochs):
 
-            cls.executeTrainingStep(trainingSet)
+            cls.executeTrainingStep(trainingSet,f1_index,f2_index)
 
-            errors = cls.executeCrossValidationStep(testSet)
+            errors = cls.executeCrossValidationStep(testSet,f1_index,f2_index)
 
             if errors == 0:
                 cls.accuracy = 1
@@ -113,21 +112,21 @@ class Task1NeuralNetwork(object):
                 cls.accuracy = 1 - (errors / len(testSet))
 
     @classmethod
-    def executeCrossValidationStep(cls, testSet):
+    def executeCrossValidationStep(cls, testSet,f1_index,f2_index):
         errors = 0
         for features, label in testSet:
-            prediction = cls.signumValue(cls.curNode.calculateNetValue(features))
+            prediction = cls.signumValue(cls.curNode.calculateNetValue(features,f1_index,f2_index))
             curError = label - prediction
             if curError != 0:
                 errors += 1
         return errors
 
     @classmethod
-    def executeTrainingStep(cls, trainingSet):
+    def executeTrainingStep(cls, trainingSet,f1_index,f2_index):
         for features, label in trainingSet:
-            prediction = cls.signumValue(cls.curNode.calculateNetValue(features))
+            prediction = cls.signumValue(cls.curNode.calculateNetValue(features,f1_index,f2_index))
             error = label - prediction
-            cls.curNode.updateWeights(error, features)
+            cls.curNode.updateWeights(error, features,f1_index,f2_index)
 
     @classmethod
     def prepareTrainingAndTestSets(cls, firstClassDataSet, secondClassDataSet):
@@ -146,12 +145,14 @@ class Task1NeuralNetwork(object):
         firstClassDataSet = []
         secondClassDataSet = []
         for i in range(len(lables)):
-            if lables[i] == classes[0]:
+            if lables[i].rstrip() == classes[0]:
                 firstClassDataSet.append((features[i], -1))
-            elif lables[i] == classes[1]:
+            elif lables[i].rstrip() == classes[1]:
                 secondClassDataSet.append((features[i], 1))
         return firstClassDataSet, secondClassDataSet
-
-    def predict(cls, features):
-        prediction = cls.signumValue(cls.curNode.calculateNetValue(features))
-        return prediction
+    @classmethod
+    def predict(cls,features):
+        print(features,cls.curNode.weights)
+        netValue = float(features[0]) * cls.curNode.weights[0] + float(features[1]) * cls.curNode.weights[1]
+        prediction = cls.signumValue(netValue)
+        return prediction, netValue
